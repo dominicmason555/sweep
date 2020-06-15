@@ -103,7 +103,7 @@ def defaultFormatter(board: Board, c: Coord) -> str:
 
 def flag(board: Board, c: Coord) -> Board:
     newBoard = Board(board.copy())
-    newBoard[c.y][c.x].Flagged = True
+    newBoard[c.y][c.x].Flagged = not newBoard[c.y][c.x].Flagged
     return newBoard
 
 
@@ -186,4 +186,5 @@ def playGame():
             over = True
 
 
-playGame()
+if __name__ == "__main__":
+    playGame()
